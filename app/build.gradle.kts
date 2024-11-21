@@ -45,10 +45,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation(libs.firebaseui.firebase.ui.auth)
     // Firebase SDK:
     implementation(platform(libs.firebase.bom))
 
     // Firestore:
     implementation(libs.firebase.firestore)
+
+    // Firebase Auth:
+    implementation(libs.firebase.auth)
 }

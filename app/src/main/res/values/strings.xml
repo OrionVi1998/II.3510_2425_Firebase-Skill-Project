@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Firebase-Skill-Project</string>
+    <string name="not_logged_in">Not Logged in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="enter_your_name">Enter Your Name</string>
 </resources>

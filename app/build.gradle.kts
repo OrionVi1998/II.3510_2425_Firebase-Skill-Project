@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -51,4 +52,11 @@ dependencies {
 
     // Firestore:
     implementation(libs.firebase.firestore)
+
+
+    // Add the dependencies for the Remote Config and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.analytics)
+
 }

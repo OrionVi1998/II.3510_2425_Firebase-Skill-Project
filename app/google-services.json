@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "375689503742",
-    "project_id": "fir-skill-project",
-    "storage_bucket": "fir-skill-project.appspot.com"
+    "project_number": "114049228181",
+    "project_id": "ex-remoteconfig",
+    "storage_bucket": "ex-remoteconfig.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:375689503742:android:30e7ad9d4bf74e97d016af",
+        "mobilesdk_app_id": "1:114049228181:android:0122a1eb20b71fd94daa9c",
         "android_client_info": {
           "package_name": "com.isep.firebaseSkillProject"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCTUwtYpoWnGOc2RTGJJRsfEBXrqFDa_Ic"
+          "current_key": "AIzaSyCgs7aoHTg4iynlL6TL2jjp3oQzrN9k8mc"
         }
       ],
       "services": {

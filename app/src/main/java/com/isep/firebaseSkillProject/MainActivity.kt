@@ -3,11 +3,15 @@ package com.isep.firebaseSkillProject
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.google.firebase.remoteconfig.ConfigUpdate
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         //start enable the dev_mode
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 3600
+            minimumFetchIntervalInSeconds = 60
         }
         // end the enable the dev_mode
         remoteConfig.setConfigSettingsAsync(configSettings)
@@ -59,6 +63,26 @@ class MainActivity : AppCompatActivity() {
         remoteConfig.fetchAndActivate()
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    val welMsg = remoteConfig.getString("welcome_message")
+                    val viewMsg = findViewById<TextView>(R.id.welcomeTextView)
+                    viewMsg.text = welMsg
+
+                    val imageUrl = remoteConfig.getString("show_background_image")
+                    val viewImage= findViewById<ImageView>(R.id.icon)
+
+
+                    if (imageUrl.isNotEmpty()) {
+                        Glide.with(this)
+                            .load(imageUrl)
+                            .into(viewImage)
+                    } else {
+                        Log.d("RemoteConfig", "No image URL available")
+                    }
+
+                    val btnText = remoteConfig.getString("fetch_button")
+                    val viewbtn = findViewById<Button>(R.id.fetchButton)
+                    viewbtn.text = btnText
+
                     val updated = task.result
                     Log.d(TAG, "Config params updated: $updated")
                     Toast.makeText(

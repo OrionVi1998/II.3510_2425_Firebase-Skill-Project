@@ -52,4 +52,8 @@ dependencies {
 
     // Firestore:
     implementation(libs.firebase.firestore)
+
+    // Remote Config
+    implementation(libs.firebase.config)
+    implementation(libs.firebase.analytics)
 }
